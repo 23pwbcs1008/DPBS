@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPBS - Goals Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">DPBS</div>
+
+        <div class="nav-item">
+            <div class="nav-icon">
+                <!-- Dashboard Icon SVG -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
+                </svg>
+            </div>
+            <span>Dashboard</span>
+        </div>
+
+        <div class="nav-item active">
+            <div class="nav-icon">
+                <!-- Goals Icon SVG -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="10" />
+                </svg>
+            </div>
+            <span>Goals</span>
+        </div>
+
+        <div class="nav-item">
+            <div class="nav-icon">
+                <!-- Savings Icon SVG -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                </svg>
+            </div>
+            <span>Savings</span>
+        </div>
+
+        <div class="nav-item">
+            <div class="nav-icon">
+                <!-- Transactions Icon SVG -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M10 18h4v-2h-4v2zM3 14h18v-2H3v2zm3-7h12V5H6v2z" />
+                </svg>
+            </div>
+            <span>Transactions</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div class="search-bar">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" placeholder="Search here">
+            </div>
+            <div class="header-right">
+                <button class="icon-btn">🔔</button>
+                <div class="user-avatar">U</div>
+            </div>
+        </div>
+
+        <!-- Page Title -->
+        <div class="page-header">
+            <h1 class="page-title">Goals</h1>
+            <button class="add-btn">+ Add goal</button>
+        </div>
+
+        <!-- Balance Card -->
+        <div class="balance-card">
+            <div class="balance-content">
+                <div class="balance-label">Total Balance</div>
+                <div class="balance-amount">Rs 50,000</div>
+            </div>
+            <button class="balance-action">+ Add balance</button>
+        </div>
+
+        <!-- Goals Container -->
+        <div class="goals-container">
+            <!-- Goal Card 1: Holiday Trip -->
+            <div class="goal-card">
+                <div class="goal-left">
+                    <div class="goal-icon">
+                        <!-- SVG Icon Placeholder for Holiday Trip -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="1"></circle>
+                        </svg>
+                    </div>
+                    <div class="goal-info">
+                        <div class="goal-title">Holiday trip</div>
+                        <div class="goal-budget-label">Budget</div>
+                        <div class="goal-budget-amount">Rs 20,000</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill blue" style="width: 70%"></div>
+                        </div>
+                        <div class="progress-text">70%</div>
+                    </div>
+                </div>
+                <div class="goal-right">
+                    <button class="goal-menu">⋯</button>
+                    <div class="goal-detail">
+                        <div class="detail-label">Target</div>
+                        <div class="detail-value">Dec,2025</div>
+                    </div>
+                    <div class="goal-detail">
+                        <div class="detail-label">Remaining</div>
+                        <div class="detail-value">Rs 5,000</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Goal Card 2: Renovation -->
+            <div class="goal-card">
+                <div class="goal-left">
+                    <div class="goal-icon">
+                        <!-- SVG Icon Placeholder for Renovation -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="1"></circle>
+                        </svg>
+                    </div>
+                    <div class="goal-info">
+                        <div class="goal-title">Renovation</div>
+                        <div class="goal-budget-label">Budget</div>
+                        <div class="goal-budget-amount">Rs 50,000</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill green" style="width: 70%"></div>
+                        </div>
+                        <div class="progress-text">70%</div>
+                    </div>
+                </div>
+                <div class="goal-right">
+                    <button class="goal-menu">⋯</button>
+                    <div class="goal-detail">
+                        <div class="detail-label">Target</div>
+                        <div class="detail-value">June,2026</div>
+                    </div>
+                    <div class="goal-detail">
+                        <div class="detail-label">Remaining</div>
+                        <div class="detail-value">Rs 40,000</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Goal Card 3: Birthday -->
+            <div class="goal-card">
+                <div class="goal-left">
+                    <div class="goal-icon">
+                        <!-- SVG Icon Placeholder for Birthday -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="1"></circle>
+                        </svg>
+                    </div>
+                    <div class="goal-info">
+                        <div class="goal-title">Birthday</div>
+                        <div class="goal-budget-label">Budget</div>
+                        <div class="goal-budget-amount">Rs 10,000</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill orange" style="width: 70%"></div>
+                        </div>
+                        <div class="progress-text">70%</div>
+                    </div>
+                </div>
+                <div class="goal-right">
+                    <button class="goal-menu">⋯</button>
+                    <div class="goal-detail">
+                        <div class="detail-label">Target</div>
+                        <div class="detail-value">Dec,2025</div>
+                    </div>
+                    <div class="goal-detail">
+                        <div class="detail-label">Remaining</div>
+                        <div class="detail-value">Rs 5,000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation items
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', function () {
+                navItems.forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Add goal button
+        document.querySelector('.add-btn').addEventListener('click', function () {
+            alert('Add goal functionality here');
+        });
+
+        // Add balance button
+        document.querySelector('.balance-action').addEventListener('click', function () {
+            alert('Add balance functionality here');
+        });
+
+        // Goal menu buttons
+        document.querySelectorAll('.goal-menu').forEach(btn => {
+            btn.addEventListener('click', function () {
+                alert('Goal options menu here');
+            });
+        });
+    </script>
+</body>
+
+</html>
