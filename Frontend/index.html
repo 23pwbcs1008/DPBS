@@ -1,27 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Personal Budget Simulator</title>
     <link rel="stylesheet" href="style.css">
-  
+
 </head>
 <div class="background"></div>
 
 <body>
     <div class="background-chart"></div>
-    
+
     <div class="container">
-        <h1>DYNAMIC PERSONAL BUDGET SIMULATOR</h1>
-        
-        <p class="description">
-            Welcome to Dynamic Personal Budget Simulation – your smart way to plan, track, and grow your savings. Set up your monthly budget, manage daily expenses, and see how your choices impact your long-term goals. Start now and take control of your financial journey!
-        </p>
-        
-        <div class="button-group">
-            <button class="btn-primary" onclick="getStarted()">GET STARTED</button>
-            <button class="btn-secondary" onclick="login()">LOGIN HERE</button>
+        <!-- Welcome Screen -->
+        <div class="welcome-screen active">
+            <h1>DYNAMIC PERSONAL BUDGET SIMULATOR</h1>
+
+            <h3 class="description">
+                Simulate, Adjust, and Master Your Personal Finances.
+            </h3>
+
+            <div class="button-group">
+                <button class="btn-primary" onclick="getStarted()">GET STARTED</button>
+                <button class="btn-secondary" onclick="showLogin()">LOGIN HERE</button>
+            </div>
+        </div>
+
+        <!-- Login Form -->
+        <div class="login-form">
+            <h2>LOGIN</h2>
+
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="email">Username/Email</label>
+                    <input type="text" id="email" name="email" placeholder="Enter your username or email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <div class="forgot-password">
+                    <a href="#" onclick="forgotPassword(event)">Forgot Password?</a>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">LOGIN</button>
+                    <button type="button" class="btn-secondary" onclick="showWelcome()">BACK</button>
+                </div>
+            </form>
+
+            <div class="back-link">
+                Don't have an account? <a href="#" onclick="showSignup()">Sign up</a>
+            </div>
         </div>
     </div>
 
@@ -31,10 +65,36 @@
             // Add your navigation logic here
         }
 
-        function login() {
-            alert('Redirecting to login page...');
+        function showLogin() {
+            document.querySelector('.welcome-screen').classList.remove('active');
+            document.querySelector('.login-form').classList.add('active');
+        }
+
+        function showWelcome() {
+            document.querySelector('.login-form').classList.remove('active');
+            document.querySelector('.welcome-screen').classList.add('active');
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            alert(`Login attempted with:\nEmail: ${email}\nPassword: ${password}`);
             // Add your login logic here
+        }
+
+        function forgotPassword(event) {
+            event.preventDefault();
+            alert('Forgot password functionality here');
+            // Add your forgot password logic here
+        }
+
+        function showSignup() {
+            document.querySelector('.login-form').classList.remove('active');
+            document.querySelector('.welcome-screen').classList.add('active');
         }
     </script>
 </body>
+
 </html>

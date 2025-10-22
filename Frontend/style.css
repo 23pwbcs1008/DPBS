@@ -26,6 +26,7 @@
     transform: scale(1.05);
 
 }
+
 body {
     font-family: var(--primary-font);
     min-height: 100vh;
@@ -50,7 +51,7 @@ body {
 }
 
 .container {
-    background: rgba(200, 200, 200, 0.95);
+    background: var(--background-color);
     border-radius: 16px;
     padding: 50px 40px;
     max-width: 600px;
@@ -58,6 +59,16 @@ body {
     text-align: center;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
+}
+
+.welcome-screen,
+.login-form {
+    display: none;
+}
+
+.welcome-screen.active,
+.login-form.active {
+    display: block;
 }
 
 h1 {
@@ -110,7 +121,7 @@ button {
 
 .btn-secondary {
     background-color: white;
-    color: var(--text-color);
+    color: var(--primary-color);
     border: 2px solid var(--primary-color);
 }
 
@@ -124,12 +135,82 @@ button {
     transform: translateY(0);
 }
 
+/* Login Form Styles */
+.login-form h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2a2a2a;
+    box-shadow: 0 0 0 3px rgba(42, 42, 42, 0.1);
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.forgot-password a {
+    font-size: 14px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.back-link a {
+    color: #2a2a2a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 600px) {
     .container {
         padding: 40px 25px;
     }
 
-    h1 {
+    h1,
+    .login-form h2 {
         font-size: 24px;
         margin-bottom: 25px;
     }
@@ -143,6 +224,11 @@ button {
         padding: 12px 24px;
         font-size: 15px;
     }
+
+    .form-group input {
+        padding: 10px 14px;
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -150,7 +236,8 @@ button {
         padding: 30px 20px;
     }
 
-    h1 {
+    h1,
+    .login-form h2 {
         font-size: 20px;
         margin-bottom: 20px;
     }
@@ -162,6 +249,11 @@ button {
 
     button {
         padding: 11px 20px;
+        font-size: 14px;
+    }
+
+    .form-group input {
+        padding: 10px 12px;
         font-size: 14px;
     }
 }
