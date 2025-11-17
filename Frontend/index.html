@@ -2,99 +2,66 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Personal Budget Simulator</title>
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DPBS - Real-Time Budgeting</title>
+  <link href="./src/output.css" rel="stylesheet">
 </head>
-<div class="background"></div>
 
-<body>
-    <div class="background-chart"></div>
+<body class="font-sans bg-slate-900">
 
-    <div class="container">
-        <!-- Welcome Screen -->
-        <div class="welcome-screen active">
-            <h1>DYNAMIC PERSONAL BUDGET SIMULATOR</h1>
+  <div class="relative min-h-screen">
 
-            <h3 class="description">
-                Simulate, Adjust, and Master Your Personal Finances.
-            </h3>
-
-            <div class="button-group">
-                <button class="btn-primary" onclick="getStarted()">GET STARTED</button>
-                <button class="btn-secondary" onclick="showLogin()">LOGIN HERE</button>
-            </div>
-        </div>
-
-        <!-- Login Form -->
-        <div class="login-form">
-            <h2>LOGIN</h2>
-
-            <form onsubmit="handleLogin(event)">
-                <div class="form-group">
-                    <label for="email">Username/Email</label>
-                    <input type="text" id="email" name="email" placeholder="Enter your username or email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                </div>
-
-                <div class="forgot-password">
-                    <a href="#" onclick="forgotPassword(event)">Forgot Password?</a>
-                </div>
-
-                <div class="button-group">
-                    <button type="submit" class="btn-primary">LOGIN</button>
-                    <button type="button" class="btn-secondary" onclick="showWelcome()">BACK</button>
-                </div>
-            </form>
-
-            <div class="back-link">
-                Don't have an account? <a href="#" onclick="showSignup()">Sign up</a>
-            </div>
-        </div>
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./Icons/Rectangle1.jpg');">
     </div>
 
-    <script>
-        function getStarted() {
-            alert('Welcome! Setting up your budget simulator...');
-            // Add your navigation logic here
-        }
+    <!-- <div class="absolute inset-0 bg-blue-400 bg-opacity-30"></div> -->
 
-        function showLogin() {
-            document.querySelector('.welcome-screen').classList.remove('active');
-            document.querySelector('.login-form').classList.add('active');
-        }
+    <div class="relative z-10 flex flex-col min-h-screen text-gray-200">
 
-        function showWelcome() {
-            document.querySelector('.login-form').classList.remove('active');
-            document.querySelector('.welcome-screen').classList.add('active');
-        }
+      <header class="container mx-auto px-6 py-6">
+        <nav class="flex justify-between items-center px-4 md:px-5">
+          <a href="#" class="text-3xl font-bold  text-white font-pacifico">
+            DPBS
+          </a>
 
-        function handleLogin(event) {
-            event.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+          <ul class="md:flex items-center space-x-8 text-gray-300 font-crimson text-lg hidden">
+            <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Login</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Contact us</a></li>
+          </ul>
+          <div class="md:hidden">
+            <a class="text-4xl text-white" href="#">&#8801;</a>
+        </div>
+        </nav>
+      </header>
 
-            alert(`Login attempted with:\nEmail: ${email}\nPassword: ${password}`);
-            // Add your login logic here
-        }
+      <main class="flex-grow flex flex-col justify-center items-center text-center">
 
-        function forgotPassword(event) {
-            event.preventDefault();
-            alert('Forgot password functionality here');
-            // Add your forgot password logic here
-        }
+        <h1 class="text-5xl md:text-6xl font-serif font-bold text-white mb-4">
+          Real-Time Budgeting Made Smarter
+        </h1>
 
-        function showSignup() {
-            document.querySelector('.login-form').classList.remove('active');
-            document.querySelector('.welcome-screen').classList.add('active');
-        }
-    </script>
+        <p class="text-xl text-gray-300 mb-10 max-w-lg">
+          See how every expense impacts your goals ---instantly
+        </p>
+
+        <a href="login.html" class="py-3 px-12 rounded-full text-lg font-semibold text-white 
+       bg-blue-500/20 border border-white/30 backdrop-blur-md 
+       hover:bg-blue-600/30 hover:border-white/50 transition-all shadow-lg">
+          GET STARTED
+        </a>
+
+      </main>
+
+      <footer class="container mx-auto px-6 py-4 text-center text-gray-400 text-sm">
+        <p>© 2025 Dynamic Personal Budget Simulator | UET Peshawar</p>
+      </footer>
+
+    </div>
+  </div>
+
 </body>
 
 </html>
