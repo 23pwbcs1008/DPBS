@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DPBS - Login Page</title>
+    <title>DPBS - Sign up</title>
     <link href="./src/output.css" rel="stylesheet">
 </head>
 
@@ -46,18 +46,23 @@
                     backdrop-blur-lg">
 
                     <h2 class="font-serif text-3xl font-bold text-white mb-3">
-                        WELCOME BACK TO DPBS!
+                        WELCOME TO DPBS!
                     </h2>
 
                     <p class="font-sans text-gray-300 mb-8">
-                        Sign in to see your monthly budget and dashboard
+                        Create your account, and start managing your budget with DPBS today.
                     </p>
 
-                    <form id="login-form" class="space-y-5">
+                    <form id="signup-form" class="space-y-5">
 
                         <div id="error-message" class="hidden text-left text-red-400 text-sm -mt-2 mb-3">
                             Please fill in all fields.
                         </div>
+                        <input type="text" id="full-name" placeholder="full name" class="w-full py-3 px-5 rounded-full 
+                     bg-white bg-opacity-10 
+                     border border-white border-opacity-30 
+                     text-gray-900 placeholder-gray-300 
+                     focus:outline-none focus:ring-2 focus:ring-white/50">
 
                         <input type="text" id="username" placeholder="username or email" class="w-full py-3 px-5 rounded-full 
                      bg-white bg-opacity-10 
@@ -71,16 +76,22 @@
                      text-gray-900 placeholder-gray-300 
                      focus:outline-none focus:ring-2 focus:ring-white/50">
 
+                        <input type="password" id="confirm-password" placeholder="confirm password" class="w-full py-3 px-5 rounded-full 
+                     bg-white bg-opacity-10 
+                     border border-white border-opacity-30 
+                     text-gray-900 placeholder-gray-300 
+                     focus:outline-none focus:ring-2 focus:ring-white/50">
+
                         <button type="submit" class="w-full py-3 px-5 rounded-full font-bold text-white
                      bg-[#0C2B58] hover:bg-indigo-950 cursor-pointer border-[#CCCFD1] border-1">
-                            LOGIN
+                            SIGN UP
                         </button>
 
                     </form>
 
                     <p class="font-sans text-sm text-gray-300 mt-6">
-                        Doesn't have an account?
-                        <a href="signup.html" class="font-semibold text-white hover:underline">sign up</a>
+                        Already have an account?
+                        <a href="login.html" class="font-semibold text-white hover:underline">Login</a>
                     </p>
                 </div>
 
@@ -95,33 +106,44 @@
 
 
     <script>
-        // Select elements
-        const form = document.getElementById("login-form");
-        const usernameInput = document.getElementById("username");
-        const passwordInput = document.getElementById("password");
+        const form = document.getElementById("signup-form");
+
+        const fullName = document.getElementById("full-name");
+        const username = document.getElementById("username");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirm-password");
         const errorMessage = document.getElementById("error-message");
 
-        // Form submit event
         form.addEventListener("submit", function (event) {
-            event.preventDefault();  // stop page refresh
+            event.preventDefault();
 
-            const username = usernameInput.value.trim();
-            const password = passwordInput.value.trim();
+            const nameVal = fullName.value.trim();
+            const userVal = username.value.trim();
+            const passVal = password.value.trim();
+            const confirmVal = confirmPassword.value.trim();
 
             // Check empty fields
-            if (username === "" || password === "") {
-                errorMessage.classList.remove("hidden");   // show error
+            if (nameVal === "" || userVal === "" || passVal === "" || confirmVal === "") {
+                errorMessage.innerText = "Please fill in all fields.";
+                errorMessage.classList.remove("hidden");
                 return;
             }
 
-            // Hide error if fields are filled
+            // Check password match
+            if (passVal !== confirmVal) {
+                errorMessage.innerText = "Passwords do not match.";
+                errorMessage.classList.remove("hidden");
+                return;
+            }
+
+            // Hide errors
             errorMessage.classList.add("hidden");
 
-            // Temporary success message (you can replace with real API later)
-            alert("Login successful (demo)");
+            // Dummy success (you can replace with API call)
+            alert("Signup successful! (Demo)");
 
-            // Redirect example (optional)
-            // window.location.href = "dashboard.html";
+            // Optional redirect
+            // window.location.href = "login.html";
         });
     </script>
 
